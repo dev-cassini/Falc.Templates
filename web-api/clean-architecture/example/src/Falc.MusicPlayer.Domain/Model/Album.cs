@@ -1,3 +1,5 @@
+using Falc.MusicPlayer.Domain.Validation.Album;
+
 namespace Falc.MusicPlayer.Domain.Model;
 
 public class Album
@@ -6,12 +8,24 @@ public class Album
     
     public string Title { get; }
     
-    public IEnumerable<Song> Songs { get; }
+    public IEnumerable<AlbumTrack> Tracks { get; }
 
-    public Album(Guid id, string title, IEnumerable<Song> songs)
+    private Album(Guid id, string title, IEnumerable<AlbumTrack> tracks)
     {
         Id = id;
         Title = title;
-        Songs = songs;
+        Tracks = tracks;
+    }
+
+    public static async Task<Album> CreateAsync(
+        Guid id, 
+        string title, 
+        IEnumerable<AlbumTrack> tracks,
+        CancellationToken cancellationToken)
+    {
+        var album = new Album(id, title, tracks);
+        await new AlbumCreateValidator().ValidateAsync(album, cancellationToken);
+
+        return album;
     }
 }
