@@ -8,13 +8,13 @@ public class AlbumTrack
     
     public Guid AlbumId { get; }
     
-    public Guid SongId { get; }
+    public Guid TrackId { get; }
 
     private AlbumTrack(int number, Album album, Track track)
     {
         Number = number;
         AlbumId = album.Id;
-        SongId = track.Id;
+        TrackId = track.Id;
     }
 
     public static async Task<AlbumTrack> CreateAsync(

@@ -1,3 +1,5 @@
+using Falc.MusicPlayer.Domain.Validation.Track;
+
 namespace Falc.MusicPlayer.Domain.Model;
 
 public class Track
@@ -17,10 +19,22 @@ public class Track
     /// </summary>
     public int LengthInSeconds { get; }
 
-    public Track(Guid id, string title, int lengthInSeconds)
+    private Track(Guid id, string title, int lengthInSeconds)
     {
         Id = id;
         Title = title;
         LengthInSeconds = lengthInSeconds;
+    }
+    
+    public static async Task<Track> CreateAsync(
+        Guid id, 
+        string title, 
+        int lengthInSeconds,
+        CancellationToken cancellationToken)
+    {
+        var track = new Track(id, title, lengthInSeconds);
+        await new TrackCreateValidator().ValidateAsync(track, cancellationToken);
+
+        return track;
     }
 }
