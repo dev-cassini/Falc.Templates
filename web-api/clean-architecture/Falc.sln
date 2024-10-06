@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falc.MusicPlayer.Domain.Bui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falc.MusicPlayer.Domain.Contracts", "example\src\Falc.MusicPlayer.Domain.Contracts\Falc.MusicPlayer.Domain.Contracts.csproj", "{0101D890-6524-447F-A938-A39A968D9434}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falc.MusicPlayer.Infrastructure", "example\src\Falc.MusicPlayer.Infrastructure\Falc.MusicPlayer.Infrastructure.csproj", "{6A585799-89D9-450D-AAC5-9432267C05BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{0101D890-6524-447F-A938-A39A968D9434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0101D890-6524-447F-A938-A39A968D9434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0101D890-6524-447F-A938-A39A968D9434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A585799-89D9-450D-AAC5-9432267C05BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A585799-89D9-450D-AAC5-9432267C05BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A585799-89D9-450D-AAC5-9432267C05BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A585799-89D9-450D-AAC5-9432267C05BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E9A586BE-4334-421A-9159-ED52DA224586} = {3D376AEB-204E-45E3-B164-A9D1B4F1B16D}
@@ -116,5 +122,6 @@ Global
 		{8FB1557A-09DC-4F1A-9C45-A712705EB083} = {3077913D-3702-492A-877B-585B396F72B9}
 		{49159E8C-B758-4FF9-8FB1-0E13F60C053D} = {3077913D-3702-492A-877B-585B396F72B9}
 		{0101D890-6524-447F-A938-A39A968D9434} = {90A60164-8A13-4686-990B-D0F5CEEC8EA8}
+		{6A585799-89D9-450D-AAC5-9432267C05BC} = {90A60164-8A13-4686-990B-D0F5CEEC8EA8}
 	EndGlobalSection
 EndGlobal
