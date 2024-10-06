@@ -1,8 +1,9 @@
+using Falc.MusicPlayer.Domain.Events.Album;
 using Falc.MusicPlayer.Domain.Validation.Album;
 
 namespace Falc.MusicPlayer.Domain.Model;
 
-public class Album
+public class Album : AggregateRoot
 {
     public Guid Id { get; }
     
@@ -36,6 +37,8 @@ public class Album
         
         await new AlbumCreateValidator().ValidateAsync(album, cancellationToken);
 
+        var @event = album.MapToCreatedDomainEvent();
+        album.AddDomainEvent(@event);
         return album;
     }
 }
